@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Write|Edit|Grep|Glob|NotebookEdit|mcp__filesystem__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/check-ignore.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

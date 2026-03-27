@@ -1,0 +1,8 @@
+{
+  "name": "hal2026",
+  "version": "0.1.0",
+  "description": "AI team orchestration — Hal delegates all work to specialized team members spawned as subagents. Never does the work directly.",
+  "author": {
+    "name": "Jed Record"
+  }
+}
