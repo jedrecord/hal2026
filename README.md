@@ -34,6 +34,7 @@ ln -s /path/to/hal2026 ~/.claude/plugins/hal2026
 ## How to Customize
 
 - **Add team members:** Ask Hal to hire a new specialist. Rachel will research the role, then Holly will create the agent definition.
+- **Rename the orchestrator:** During `/hal-init`, choose a custom name for the orchestrator persona (default: Hal). The `/hal` command stays the same.
 - **Modify delegation rules:** Edit the Hal agent definition to update routing logic.
 - **Add skills:** Drop a `SKILL.md` file into a new subdirectory under `skills/`. Skills are reusable prompt fragments that any team member can invoke.
 

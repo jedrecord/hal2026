@@ -260,9 +260,13 @@ Without `.claudeignore`, Claude has access to every file in the project. This is
 ### Installation
 Install hal2026 as a Claude Code plugin (local path or marketplace).
 
+### Orchestrator Name
+
+The orchestrator persona is configurable per project. During `/hal-init`, you'll be asked what name the AI orchestrator should use. The default is "Hal", but you can choose any name (e.g., "Jarvis", "Friday", "Max"). The `/hal` command name stays the same — only the persona name changes. The chosen name appears in the team roster, CLAUDE.md, and all orchestrator communications.
+
 ### First Use
 1. Run `/hal-init` in your project directory
-2. Answer the setup questions (project name, tech stack, team member names)
+2. Answer the setup questions (project name, tech stack, team member names, orchestrator name)
 3. Review the generated `.agents/` files and customize constraints
 4. Run `/hal` followed by your first request
 

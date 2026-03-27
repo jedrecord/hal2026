@@ -10,7 +10,7 @@ updated: YYYY-MM-DD
 | Name | Role | Specialty | Model | Status |
 |------|------|-----------|-------|--------|
 | **[Owner]** | Team Lead | Direction, decisions, final say | Human | Active |
-| **Hal** | Orchestrator | Task routing, coordination, delegation | opus | Active |
+| **[Orchestrator]** | Orchestrator | Task routing, coordination, delegation | opus | Active |
 
 ## Core Team
 

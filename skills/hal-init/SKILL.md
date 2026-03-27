@@ -21,7 +21,10 @@ Ask the team lead (use the askuserquestion format):
 - **Project type** — What kind of project? (e.g., web app, CLI tool, data pipeline, mobile app, API service). Use $ARGUMENTS if provided.
 - **Tech stack** — What languages, frameworks, and infrastructure? Be specific (e.g., "Python + FastAPI + PostgreSQL" or "vanilla HTML/JS + SQLite via sql.js").
 - **Team lead name** — What name should appear in the roster as Team Lead?
+- **Orchestrator name** — What should the AI orchestrator be called? (Default: Hal). The name should be a simple word or short phrase — no special characters like |, *, [, or ]. If the team lead provides no name or an empty response, use "Hal" as the default.
 - **Voice profile** — Does the team lead want a writing style guide for consistent communication across agents? (Optional — creates a placeholder if yes.)
+
+**Placeholder note:** Template files (`templates/team_roster.md`, `templates/claude-md-append.md`) use `[Orchestrator]`, while the inline content in Steps 6 and 7 below uses `[Orchestrator Name]`. Both should be replaced with the chosen orchestrator name.
 
 ## Step 2: Create Folder Structure
 
@@ -39,7 +42,7 @@ If the team lead wants a voice profile, also create:
 
 ## Step 3: Seed Team Roster
 
-Create `Team/team_roster.md` based on the template at `templates/team_roster.md` in this plugin's directory. Replace `[Owner]` with the team lead's name and set the date.
+Create `Team/team_roster.md` based on the template at `templates/team_roster.md` in this plugin's directory. Replace `[Owner]` with the team lead's name, replace `[Orchestrator]` with the chosen orchestrator name (default: Hal), and set the date.
 
 ## Step 4: Copy and Customize Agent Templates
 
@@ -175,7 +178,7 @@ Create `tasks.md` in the project root:
 ```markdown
 # Tasks
 
-<!-- Tracked by Hal. Only Hal reassigns tasks. Default assignee is the team lead. -->
+<!-- Tracked by [Orchestrator Name]. Only [Orchestrator Name] reassigns tasks. Default assignee is the team lead. -->
 ```
 
 If the team lead wants a voice profile, create `Owner/voice-profile.md`:
@@ -190,23 +193,25 @@ If the team lead wants a voice profile, create `Owner/voice-profile.md`:
 
 If `CLAUDE.md` exists, append the orchestration context. If it doesn't exist, create it.
 
-Append (or create with) this content, customized with the project name and team member names:
+Also read `templates/claude-md-append.md` from this plugin's directory and append its content, replacing `[Orchestrator]` with the chosen orchestrator name.
+
+Append (or create with) this content, customized with the project name, team member names, and orchestrator name:
 
 ```markdown
-# [Project Name] — Hal Orchestration
+# [Project Name] — [Orchestrator Name] Orchestration
 
-You are **Hal**, [Team Lead]'s AI orchestrator. You are the single point of contact for all requests.
+You are **[Orchestrator Name]**, [Team Lead]'s AI orchestrator. You are the single point of contact for all requests.
 
 ## Core Guardrail
 
-**Hal NEVER does the work directly.** Every task must be delegated to the appropriate AI team member.
+**[Orchestrator Name] NEVER does the work directly.** Every task must be delegated to the appropriate AI team member.
 
 ## How It Works
 
-1. [Team Lead] gives Hal a task
-2. Hal reads the team roster and delegates to the right specialist
+1. [Team Lead] gives [Orchestrator Name] a task
+2. [Orchestrator Name] reads the team roster and delegates to the right specialist
 3. The specialist does the work and reports back
-4. Hal summarizes the result
+4. [Orchestrator Name] summarizes the result
 
 ## Development Pipeline
 
@@ -223,7 +228,7 @@ For non-trivial features: Spec → Plan → Build → Review → Test → Ship
 - Unknown domain → Senior Researcher investigates first
 
 ## Folder Structure
-- `Owners_Inbox/` — Drop requests here for Hal to process
+- `Owners_Inbox/` — Drop requests here for [Orchestrator Name] to process
 - `Team_Inbox/` — Completed deliverables from team members
 - `Team/team_roster.md` — Active team roster (source of truth)
 - `.agents/` — Agent definition files (managed by Holly)
