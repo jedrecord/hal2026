@@ -11,11 +11,7 @@
   "plugins": [
     {
       "name": "hal2026",
-      "source": {
-        "source": "github",
-        "repo": "jedrecord/hal2026",
-        "ref": "main"
-      },
+      "source": "./",
       "description": "AI team orchestration plugin. Hal receives requests, assesses which specialist is best suited, and delegates via subagent. Includes a hiring pipeline (Rachel researches, Holly creates agents), a full development pipeline (Spec → Plan → Build → Review → Test → Ship), and a .claudeignore hook system for file-level access control.",
       "version": "0.1.0",
       "author": {
