@@ -1,0 +1,43 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "hal2026",
+  "owner": {
+    "name": "Jed Record"
+  },
+  "metadata": {
+    "description": "AI team orchestration plugin for Claude Code — Hal delegates all work to specialized subagents and never does the work directly.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "hal2026",
+      "source": {
+        "source": "github",
+        "repo": "jedrecord/hal2026",
+        "ref": "main"
+      },
+      "description": "AI team orchestration plugin. Hal receives requests, assesses which specialist is best suited, and delegates via subagent. Includes a hiring pipeline (Rachel researches, Holly creates agents), a full development pipeline (Spec → Plan → Build → Review → Test → Ship), and a .claudeignore hook system for file-level access control.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Jed Record"
+      },
+      "homepage": "https://github.com/jedrecord/hal2026",
+      "repository": "https://github.com/jedrecord/hal2026",
+      "license": "GPL-2.0-only",
+      "keywords": [
+        "orchestration",
+        "agents",
+        "subagents",
+        "team",
+        "delegation",
+        "workflow",
+        "pipeline",
+        "ai-team"
+      ],
+      "category": "productivity",
+      "commands": "skills",
+      "agents": "agents",
+      "hooks": "hooks/hooks.json"
+    }
+  ]
+}
